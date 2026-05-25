@@ -199,53 +199,79 @@ function App() {
         </nav>
 
         {/* Hero Section */}
-        <section className="max-w-5xl mx-auto px-6 pt-28 pb-24 flex flex-col items-start gap-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold tracking-wide uppercase border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            Flutter Developer @ Edugaon Technology
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-none">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.15)]">
-              {profile.name}
-            </span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-400 tracking-tight">
-            {profile.role}
-          </h2>
-          <p className="text-lg text-slate-400 max-w-2xl leading-relaxed font-light">
-            {profile.bio}
-          </p>
+        {/* Updated Hero Section with Profile Picture */}
+        <section className="max-w-5xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-12 gap-12 items-center">
+          {/* Left Side: Content Box (Takes 8 columns on desktop) */}
+          <div className="md:col-span-8 flex flex-col items-start gap-6 order-2 md:order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold tracking-wide uppercase border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Flutter Developer @ Edugaon Technology
+            </div>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-none">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+                {profile.name}
+              </span>
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-400 tracking-tight">
+              {profile.role}
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl leading-relaxed font-light">
+              {profile.bio}
+            </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="#contact"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-slate-950 font-bold transition-all shadow-lg hover:shadow-cyan-500/20 hover:scale-[1.02] active:scale-100"
-            >
-              Get In Touch
-            </a>
-            <a
-              href={profile.resumeLink}
-              download
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 font-semibold transition-all border border-slate-800 text-cyan-400 hover:border-cyan-500/30 flex items-center gap-2 hover:scale-[1.02]"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
+            <div className="flex flex-wrap gap-4 pt-4">
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-slate-950 font-bold transition-all shadow-lg hover:shadow-cyan-500/20 hover:scale-[1.02] active:scale-100"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                ></path>
-              </svg>
-              Download CV
-            </a>
+                Get In Touch
+              </a>
+              <a
+                href={profile.resumeLink}
+                download
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 font-semibold transition-all border border-slate-800 text-cyan-400 hover:border-cyan-500/30 flex items-center gap-2 hover:scale-[1.02]"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side: Professional Rounded Profile Picture (Takes 4 columns on desktop) */}
+          <div className="md:col-span-4 flex justify-center order-1 md:order-2 w-full">
+            <div className="relative group w-48 h-48 md:w-64 md:h-64 shrink-0">
+              {/* Background Neon Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse"></div>
+
+              {/* Real Image Container */}
+              <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-tr from-cyan-400 via-emerald-400 to-indigo-500 shadow-2xl">
+                <img
+                  src="/profile.png" // Agar PNG hai toh /profile.png kar dena
+                  alt={profile.name}
+                  className="w-full h-full object-cover rounded-full bg-slate-900 filter grayscale-[10%] hover:grayscale-0 transition-all duration-500"
+                  onError={(e) => {
+                    // Backup avatar agar image load na ho paye kisi wajah se
+                    e.target.src =
+                      "https://api.dicebear.com/7.x/bottts/svg?seed=Purushottam";
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </section>
 
