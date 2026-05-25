@@ -9,7 +9,6 @@ function App() {
     email: "purushottam.dev01@gmail.com", //
     github: "https://github.com/Purushottamji",
     linkedin: "https://www.linkedin.com/in/purushottamkumar01", //
-    // FIXED: Public folder files are served from the root "/" directly in Vite
     resumeLink: "/Purushottam_Flutter_Resume.pdf",
   };
 
@@ -71,7 +70,6 @@ function App() {
     },
   ];
 
-  // ─── STATE FOR MIDDLE-SIZED RIPPLE TRAIL EFFECT ───
   const [ripples, setRipples] = useState([]);
 
   useEffect(() => {
@@ -160,10 +158,10 @@ function App() {
         {/* Navbar */}
         <nav className="sticky top-0 z-50 bg-slate-950/70 backdrop-blur-md border-b border-slate-900">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent tracking-tight shrink-0">
               &lt;{profile.name.split(" ")[0]} /&gt;
             </span>
-            <div className="flex gap-6 text-sm font-medium text-slate-400">
+            <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
               <a
                 href="#about"
                 className="hover:text-cyan-400 transition-colors"
@@ -187,6 +185,14 @@ function App() {
                 className="hover:text-cyan-400 transition-colors"
               >
                 Contact
+              </a>
+            </div>
+            <div className="md:hidden">
+              <a
+                href="#contact"
+                className="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-3 py-1.5 rounded-lg border border-cyan-500/20"
+              >
+                Contact ↗
               </a>
             </div>
           </div>
