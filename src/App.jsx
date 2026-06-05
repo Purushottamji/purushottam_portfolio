@@ -5,28 +5,40 @@ function App() {
     name: "Purushottam Kumar", //[cite: 1]
     role: "Flutter Developer / Mobile App Developer", //
     bio: "I am a Flutter developer with 1+ years of experience in mobile app development. I specialize in building high-performance UIs, robust Dart logic, clean API integration, and efficient state management architectures.", //
-    mobile: "+91 85075 36900", //
-    email: "purushottam.dev01@gmail.com", //
+    mobile: "+91 90975 80024", //
+    email: "purushottam.tech01@gmail.com", //
     github: "https://github.com/Purushottamji",
     linkedin: "https://www.linkedin.com/in/purushottamkumar01", //
-    resumeLink: "/Purushottam_Flutter_Resume.pdf",
+    resumeLink: "/Purushottam_Resume_Flutter.pdf",
   };
 
   const skillCategories = [
     { title: "Mobile Development", items: ["Flutter", "Dart", "Kotlin"] }, //
     { title: "State Management", items: ["Provider", "Bloc", "GetX"] }, //
     {
-      title: "Backend & Database",
-      items: ["Node.js", "REST APIs", "Firebase", "MySQL"],
+      title: "Backend & Services",
+      items: [
+        "Node.js",
+        "REST APIs",
+        "Firebase",
+        "MySQL",
+        "Socket.IO",
+        "WebRTC",
+        "Express.js",
+        "JavaScript",
+      ],
     }, //
     {
-      title: "Web & Version Control",
+      title: "Tools & Version Control",
       items: [
-        "JavaScript",
-        "HTML5 & CSS3",
-        "Tailwind CSS",
         "Git & GitHub",
-        "GitFlow",
+        "GitHub Actions",
+        " Postman",
+        "VS Code",
+        "Android Studio",
+        "Figma",
+        "Google Maps API",
+        "Razorpay",
       ],
     }, //
   ];
@@ -51,6 +63,29 @@ function App() {
 
   const projects = [
     {
+      title: "Connectify - Real-Time Chat & Video Calling Platform", //
+      description:
+        "Users can send instant text messages to each other and start live video calls And It uses WebRTC technology for video calling, which allows high-quality, lag-free video streaming directly between two phones. For the instant messaging part, it uses Socket.io to make sure text messages deliver in real-time instantly.", //
+      tech: ["Flutter", "Dart", "Provider", "REST APIs", "MySQL"], //
+      github: "https://github.com/Purushottamji/Connectify.git",
+      isLiveOnPlayStore: false,
+    },
+    {
+      title: "VibeMesh : Social Media Mobile Application", //
+      description:
+        "Users can share photos and posts, view other users' profiles, and follow or unfollow friends. It also includes options to like and comment on posts. The frontend is made with Flutter and the backend API is written in Node.js/Express. Most importantly, implemented an automated CI/CD pipeline using GitHub Actions and Render. Automated build, testing, and deployment cycles to Render, minimizing manual deployment overhead and ensuring rapid release cycles. ", //
+      tech: [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "REST APIs",
+        "MySQL",
+        "GitHub Action (CI/CD)",
+      ], //
+      github: "https://github.com/Purushottamji/VibeMesh.git",
+      isLiveOnPlayStore: false,
+    },
+    {
       title: "ZaykaZone : Food Delivery Application", //
       description:
         "A smart food delivery app designed to make ordering meals quick and convenient. It allows users to explore nearby restaurants, browse dynamic menus, and handle safe cart workflows.", //
@@ -64,7 +99,6 @@ function App() {
       description:
         "A comprehensive e-commerce app that allows users to search products, view real-time product details, manage persistence cart state, and place seamless orders via payment gateways.", //
       tech: ["Flutter", "Dart", "Provider", "REST APIs", "Razorpay"], //
-      github: "https://github.com",
       live: "https://play.google.com/store/apps/details?id=com.shopsathi.app&pcampaignid=web_share",
       isLiveOnPlayStore: true,
     },
@@ -205,7 +239,7 @@ function App() {
           <div className="md:col-span-8 flex flex-col items-start gap-6 order-2 md:order-1">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold tracking-wide uppercase border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              Flutter Developer @ Edugaon Technology
+              Flutter Developer @ OfferPlant Technology
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-none">
               Hi, I'm{" "}
@@ -385,7 +419,7 @@ function App() {
                     <h4 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors tracking-tight">
                       {project.title}
                     </h4>
-                    {project.isLiveOnPlayStore && (
+                    {project.isLiveOnPlayStore && project.live && (
                       <span className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 shrink-0 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                         LIVE
@@ -407,42 +441,53 @@ function App() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 mt-8 pt-4 border-t border-slate-900">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    Source Code
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors ml-auto"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                    Play Store ↗
-                  </a>
-                </div>
+                {/* Bottom Link Bar - Yeh row sirf tabhi dikhegi jab dono me se koi ek button valid ho */}
+                {(project.github ||
+                  (project.isLiveOnPlayStore && project.live)) && (
+                  <div className="flex gap-4 mt-8 pt-4 border-t border-slate-900 items-center">
+                    {/* Source Code Button - Sirf tabhi dikhega jab github link hoga */}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        Source Code
+                      </a>
+                    )}
+
+                    {/* Play Store Button - Sirf tabhi dikhega jab app live ho aur link ho */}
+                    {project.isLiveOnPlayStore && project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors ml-auto"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Play Store ↗
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -519,8 +564,7 @@ function App() {
 
         {/* Footer */}
         <footer className="border-t border-slate-900 py-8 text-center text-xs text-slate-500 font-light">
-          © {new Date().getFullYear()} {profile.name}. Handcrafted with React &
-          Tailwind CSS.
+          © {new Date().getFullYear()} {profile.name}
         </footer>
       </div>
     </div>
