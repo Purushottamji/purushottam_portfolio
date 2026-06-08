@@ -45,11 +45,6 @@ function App() {
 
   const education = [
     {
-      degree: "Professional Diploma in Software Engineering", //
-      institution: "Edugaon Education and Innovation Lab", //
-      year: "Present",
-    },
-    {
       degree: "Bachelor of Arts (BA)", //
       institution: "JP University, Chapra", //
       year: "Completed",
